@@ -1,0 +1,42 @@
+(define (problem solve)
+    (:domain cleaner)
+    (:objects 
+        room1 room2 room3 room4 socks_basket robot 
+    )
+    (:init
+        (room room1)
+        (room room2) 
+        (room room3) 
+        (room room4) 
+        (robot robot)
+        (basket socks_basket)
+        
+        (have_basket room2)
+        (have_socks room1)
+        (have_socks room2)
+        (have_socks room3)
+        (have_socks room4)
+        (dirty room1)
+        (dirty room2)
+        (dirty room3)
+        (dirty room4)
+        (have_robot room4)
+        (fullPower robot)
+        (have_charging room4)
+
+    )
+    (:goal                                               
+        (and
+            (clean room1)
+            (dirty room2)
+            (dirty room3)
+            (clean room4)
+            (fullPower robot)
+            (not(have_socks room1))
+            (not(have_socks room2))
+            (not(have_socks room3))
+            (not(have_socks room4))
+            (not(full_of_socks robot))
+        )
+    )
+)
